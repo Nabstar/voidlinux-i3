@@ -1,0 +1,41 @@
+
+
+
+!Appearance
+
+!UXTerm*faceName: PowerlineSymbols
+!UXTerm*faceSize: 13
+!UXTerm*termName: xterm-256color
+!UXTerm*locale: true
+
+
+
+
+!=======================================================================================================================
+! UXTerm settings                                                                                                  
+!=======================================================================================================================
+!! Most settings are from the ArchWiki: https://wiki.archlinux.org/index.php/Xterm
+
+UXTerm*termName: xterm-256color
+
+!! Interpret all incoming data as UTF-8
+UXTerm*locale: true
+
+!! Allow the use of Alt key for shortcuts
+UXTerm*metaSendsEscape: true
+
+UXTerm*saveLines: 10000
+UXTerm*cursorBlink: true
+
+! UXTerm*faceName: FuraMonoForPowerline\ Nerd\ Font:style=Regular
+UXTerm*faceName: mplus\ Nerd\ Font
+UXTerm*faceSize: 13
+UXTerm*scaleHeight: 1.15
+
+UXTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+UXTerm*rightScrollBar: false
+UXTerm*scrollBar: false
+!UXTerm*printerCommand: xterm -T History -e sh -c 'less -r <&3' 3<&0
+!UXTerm*translations:   #override Ctrl <Key>slash: print-everything()
+
+

@@ -1,0 +1,134 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+# General i3status colors
+#######################################################################
+    general {
+        colors = true
+        interval = 1
+    	color_good = "#2AA198"
+        color_bad = "#586E75"
+    	color_degraded = "#DC322F"
+    }
+#######################################################################
+
+# order in which they are load 
+#######################################################################
+    order += "cpu_usage"
+    # order += "load"
+    order += "disk /"
+    # order += "disk /home"
+    order += "wireless _first_"
+    order += "ethernet _first_"
+    order += "battery 1"
+    order += "tztime local"
+    # order += "ipv6"
+    # order += "run_watch DHCP"
+    # order += "run_watch VPN"
+#######################################################################
+
+
+# CPU usage 
+######################################
+    cpu_usage {
+    	format = "   %usage "
+    }
+######################################
+
+# Load usage
+######################################
+    load {
+    	format = " load %1min "
+    	# max_threshold = 0.3
+    }
+######################################
+
+
+# root disk space
+######################################
+    disk "/" {
+        # format = " hdd %avail "
+        format = "  %avail "
+    }
+######################################
+
+# home disk space
+######################################
+    disk "/home" {
+        format = " /home %avail "
+    }
+######################################
+
+
+# wifi signal display
+#######################################################
+    #wireless _first_ {
+        #format_up = "W: (%quality at %essid) %ip"
+        #format_up = "  %essid %quality "
+        #format_up = "W: %quality  at %essid %ip"
+        #format_down = ""
+        #format_down = " no wlan "
+    #}
+######################################################
+
+# ethernet strength display 
+##################################################################
+    ethernet _first_ {
+        # if you use %speed, i3status requires root privileges
+        format_up = " lan: %ip %speed "
+        format_down = " no lan "
+    }
+##################################################################
+
+# date and time display
+###############################################################
+    tztime local {
+        #format = "   %Y-%m-%d   %H:%M:%S "
+        format = "   %A %e-%B-%Y  %H:%M:%S"
+        #format = " %m.%d.%H:%M "
+    }
+###############################################################
+
+# battery life display
+#################################################################################################
+    battery 1 {
+
+        format = "%status %percentage %remaining"
+        format_down = ""
+        last_full_capacity = true
+        integer_battery_capacity = true
+        low_threshold = 11
+        threshold_type = percentage
+        hide_seconds = true
+        status_chr = " "
+        status_bat = " "
+        status_unk = " "
+        status_full = " "
+
+        #%status = charging, discharging, or running; %remaining = percent left; %emptytime = time #left; %consumption = speed of usage
+        #format          = "%status %percentage %remaining"
+        #last_full_capacity = true
+        #integer_battery_capacity = false
+        #threshold_type  = "time"
+        #low_threshold   = 15
+        #color_good      = "#00FF00"
+        #color_degraded  = "#0000FF"
+        #color_bad       = "#FF0000"
+    }
+
+#################################################################################################
+
+# Miscellaneous section
+###########################################################
+# run_watch DHCP {
+#         pidfile = "/var/run/dhclient*.pid"
+# }
+# run_watch VPN {
+#         pidfile = "/var/run/vpnc/pid"
+# }
+###########################################################
