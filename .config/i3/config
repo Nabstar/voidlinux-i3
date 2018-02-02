@@ -65,9 +65,15 @@
 ################################################################################
 
 # start a rofi (a program launcher)
-# bindsym $mod+d exec rofi -show run -lines 3 -bw 1 -font "Cantarell 18" -opacity "75" 
+#bindsym $mod+d exec rofi -show run -lines 3 -bw 1 -font "Cantarell 18" -opacity "75" 
 ###############################################################################################
-    bindsym $mod+d exec rofi -show run -lines 3 -eh 1 -width 100 -padding 500 -opacity "85" -font "Cantarell 18"
+# custom rofi setting with large padding
+bindsym $mod+d exec rofi -show run -lines 4 -eh 1 -width 100 -padding 400 -opacity "85" -font "Cantarell 18"
+#
+# customized rofi setting with combi-modi
+
+#bindsym $mod+d exec rofi -combi-modi window,run -show combi -lines 3 -eh 1 -width 100 -padding 500 -opacity "85" -font "Cantarell 18"
+
 ###############################################################################################
 
 # change focus
@@ -254,7 +260,7 @@
                 bindsym j resize shrink width 10 px or 10 ppt
                 bindsym k resize grow height 10 px or 10 ppt
                 bindsym l resize shrink height 10 px or 10 ppt
-                bindsym odiaeresis resize grow width 10 px or 10 ppt
+                bindsym o resize grow width 10 px or 10 ppt
 
             # same bindings, but for the arrow keys
             #######################################################################
@@ -318,9 +324,9 @@
 
 # screenshot
 ##################################################################################################
-    bindsym Print exec scrot $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-    bindsym Mod1+Print exec scrot -u $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-    bindsym Mod1+Shift+Print exec scrot -s $HOME/Bilder/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+    bindsym Print exec scrot $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+    bindsym Mod1+Print exec scrot -u $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+    bindsym Mod1+Shift+Print exec scrot -s $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 ##################################################################################################
 
 # i3 status
@@ -388,5 +394,6 @@
     exec --no-startup-id kalu
     exec --no-startup-id variety
     exec --no-startup-id urxvt -e ranger
+    exec --no-startup-id unclutter
+    exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
 ###############################################################################
-

@@ -72,7 +72,7 @@ setopt RM_STAR_WAIT
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="classyTouch"
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -162,3 +162,6 @@ export CATALINA_HOME=/usr/share/tomcat7
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+
+# adding maven to path
+export PATH="$PATH:/opt/maven/bin"

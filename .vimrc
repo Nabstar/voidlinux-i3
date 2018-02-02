@@ -28,7 +28,7 @@ set relativenumber					"activating line numbers.
 "set number
 set t_CO=16						"set terminal color to 256.
 "set wrap                                                "this enables "visual" wrapping
-"set textwidth=0 wrapmargin=0                            "this turns off physical line wrapping 
+"set textwidth=0 wrapmargin=0                            "this turns off physical line wrapping
 
 
 "----------------------- Visuals -------------------------"
@@ -135,6 +135,7 @@ let g:vimwiki_list = [
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 :autocmd FileType vimwiki map d :VimwikiMakeDiaryNote
 function! ToggleCalendar()
+set nowrapscan
   execute ":Calendar"
   if exists("g:calendar_open")
     if g:calendar_open == 1
@@ -148,3 +149,18 @@ function! ToggleCalendar()
   end
 endfunction
 :autocmd FileType vimwiki map c :call ToggleCalendar()
+
+
+"-------------------- HTML into Javascript string converstion ------------
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+
+
+"-------------------- Python specific settings ---------------------------
+set ts=4 		      "set tabs to have 4 spaces
+set autoindent 		  "autoindent when moving to next line
+set expandtab		  "expand tabs into spaces
+set shiftwidth=4	  "when using the >> or << commands, shift lines by 4 spaces
+set showmatch		  "show the matching part of the pair for [] {} and ()
+let python_highlight_all = 1 "enable all python highlighting features
+"
